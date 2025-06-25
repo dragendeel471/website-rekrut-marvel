@@ -101,25 +101,25 @@
 </head>
 <body>
 
-  <section class="hero" data-aos="fade-up">
+  <section class="hero" data-aos="fade-up" data-aos-delay="0">
     <h1>🚀 Punya Mimpi Gede? Bangun Karier Lo Bareng Kita</h1>
     <p>Kita bukan tim biasa. Kita tempatnya lo tumbuh — bareng orang-orang ambis yang cinta <span class="highlight">investasi, bisnis, dan perkembangan diri</span>.</p>
   </section>
 
-  <section class="section" data-aos="slide-right">
+  <section class="section" data-aos="slide-right" data-aos-delay="200">
     <h2>🔥 Kenapa Harus Gabung?</h2>
     <p>Lo capek kerja keras tapi stuck di situ-situ aja? Atau ngerasa belum nemu lingkungan yang bantu lo naik kelas?</p>
     <p>Di tim ini, kita punya budaya <span class="highlight">kolaborasi & support</span>. Kita bareng-bareng bantu lo grow: dari yang belum tahu dunia finansial sampai yang siap jadi leader.</p>
     <p>Mentoring? Ada. Komunitas? Solid. Tools? Lengkap. Yang penting lo punya <span class="highlight">niat & kemauan belajar</span>.</p>
   </section>
 
-  <section class="section" data-aos="slide-left">
+  <section class="section" data-aos="slide-left" data-aos-delay="400">
     <h2>🎯 Visi Kita</h2>
     <p>Kita pengen bikin <strong>generasi muda yang melek finansial</strong>, nggak cuma bisa kerja keras tapi juga kerja cerdas. Kita percaya semua orang bisa jadi investor & entrepreneur asal dapet akses dan bimbingan yang tepat.</p>
     <p>Kita bangun ekosistem: tim yang sehat, sistem yang jelas, dan peluang yang terus berkembang bareng lo.</p>
   </section>
 
-  <section class="section" data-aos="fade-up">
+  <section class="section" data-aos="fade-up" data-aos-delay="600">
     <h2>💡 Apa yang Akan Lo Dapat?</h2>
     <ul style="color: #ccc; font-size: 1.05rem;">
       <li>✅ Akses ke pelatihan & mentoring langsung dari praktisi</li>
@@ -130,7 +130,7 @@
     </ul>
   </section>
 
-  <section class="section cta" data-aos="zoom-in">
+  <section class="section cta" data-aos="zoom-in" data-aos-delay="800">
     <h2>⚡ Siap Take Action?</h2>
     <p>Kalo lo udah baca sampai sini, berarti lo serius. Klik tombol di bawah buat isi data singkat & kita akan kontak lo langsung lewat WhatsApp.</p>
     <a href="form.html" class="btn">Gua Mau Join 🔥</a>
@@ -144,8 +144,10 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
-      duration: 10000,
-      once: true
+      duration: 1600, // Lebih lambat
+      easing: 'ease-out-back', // Smooth easing
+      once: true,
+      offset: 100
     });
   </script>
 </body>
