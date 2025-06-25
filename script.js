@@ -1,58 +1,77 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("rekrutForm");
 
-document.getElementById('rekrutForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-    const nama = document.getElementById('nama').value.trim();
-    const usia = document.getElementById('usia').value.trim();
-    const kota = document.getElementById('kota').value.trim();
-    const instagram = document.getElementById('instagram').value.trim();
-    const whatsapp = document.getElementById('whatsapp').value.trim();
-    const motivasi = document.getElementById('motivasi').value.trim();
-    const myWa = '087769211228';
+        const nama = document.getElementById("nama");
+        const usia = document.getElementById("usia");
+        const kota = document.getElementById("kota");
+        const instagram = document.getElementById("instagram");
+        const whatsapp = document.getElementById("whatsapp");
+        const motivasi = document.getElementById("motivasi");
 
-    let valid = true;
+        const regexHuruf = /^[A-Za-z\s]+$/;
+        const regexAngka = /^[0-9]+$/;
 
-    const fields = [
-        { id: 'nama', value: nama },
-        { id: 'usia', value: usia },
-        { id: 'kota', value: kota },
-        { id: 'whatsapp', value: whatsapp },
-        { id: 'motivasi', value: motivasi },
-    ];
+        let isValid = true;
 
-    document.getElementById('notif').style.display = 'none';
-    fields.forEach(field => {
-        const errorElement = document.getElementById('error-' + field.id);
-        if (!field.value) {
-            errorElement.textContent = "Tolong isi data ini";
-            valid = false;
+        // Nama: hanya huruf
+        if (!regexHuruf.test(nama.value.trim())) {
+            document.getElementById("error-nama").innerText = "Nama hanya boleh huruf dan spasi.";
+            isValid = false;
         } else {
-            errorElement.textContent = "";
+            document.getElementById("error-nama").innerText = "";
         }
+
+        // Usia: harus diisi
+        if (!usia.value.trim()) {
+            document.getElementById("error-usia").innerText = "Usia wajib diisi.";
+            isValid = false;
+        } else {
+            document.getElementById("error-usia").innerText = "";
+        }
+
+        // Kota: hanya huruf
+        if (!regexHuruf.test(kota.value.trim())) {
+            document.getElementById("error-kota").innerText = "Kota hanya boleh huruf dan spasi.";
+            isValid = false;
+        } else {
+            document.getElementById("error-kota").innerText = "";
+        }
+
+        // Instagram: tambahkan '@' kalau belum ada
+        if (instagram.value.trim() && !instagram.value.startsWith("@")) {
+            instagram.value = "@" + instagram.value.trim();
+        }
+        document.getElementById("error-instagram").innerText = "";
+
+        // WhatsApp: hanya angka
+        if (!regexAngka.test(whatsapp.value.trim())) {
+            document.getElementById("error-whatsapp").innerText = "Nomor WA hanya boleh angka.";
+            isValid = false;
+        } else {
+            document.getElementById("error-whatsapp").innerText = "";
+        }
+
+        // Motivasi
+        if (!motivasi.value.trim()) {
+            document.getElementById("error-motivasi").innerText = "Tulis motivasi kamu.";
+            isValid = false;
+        } else {
+            document.getElementById("error-motivasi").innerText = "";
+        }
+
+        if (!isValid) {
+            document.getElementById("notif").style.display = "block";
+            return;
+        }
+
+        // Redirect ke WhatsApp jika valid
+        const waNumber = whatsapp.value.trim();
+        const waMessage = `Halo! Saya ${nama.value}, usia ${usia.value}, dari ${kota.value}. Instagram saya ${instagram.value}. Saya tertarik join karena: ${motivasi.value}`;
+
+        const encodedMessage = encodeURIComponent(waMessage);
+        window.location.href = `https://wa.me/${waNumber}?text=${encodedMessage}`;
     });
-
-    if (!valid) {
-        document.getElementById('notif').style.display = 'block';
-        return;
-    }
-
-    const formData = new FormData();
-    formData.append("entry.664818392", nama);
-    formData.append("entry.972541376", usia);
-    formData.append("entry.1089763777", kota);
-    formData.append("entry.2067304660", instagram);
-    formData.append("entry.630701239", whatsapp);
-    formData.append("entry.507833687", motivasi);
-
-    fetch("https://docs.google.com/forms/d/e/1FAIpQLSeslOdIv7aJykg4cVP_qfGuiJNQpwJCmZ-6kEi4cq01wBQ9vA/formResponse", {
-        method: "POST",
-        mode: "no-cors",
-        body: formData
-    });
-
-    const pesanWA = `Halo! Saya ${nama}, usia ${usia} dari ${kota}. IG: ${instagram || '-'} | WA: ${whatsapp}. Alasan saya tertarik join: ${motivasi}`;
-    const linkWA = `https://wa.me/${myWa.replace(/^0/, '62')}?text=${encodeURIComponent(pesanWA)}`;
-    setTimeout(() => {
-        window.location.href = linkWA;
-    }, 300);
 });
