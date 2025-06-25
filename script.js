@@ -8,6 +8,7 @@ document.getElementById('rekrutForm').addEventListener('submit', function (e) {
     const instagram = document.getElementById('instagram').value.trim();
     const whatsapp = document.getElementById('whatsapp').value.trim();
     const motivasi = document.getElementById('motivasi').value.trim();
+    const myWa = '087769211228';
 
     let valid = true;
 
@@ -50,7 +51,7 @@ document.getElementById('rekrutForm').addEventListener('submit', function (e) {
     });
 
     const pesanWA = `Halo! Saya ${nama}, usia ${usia} dari ${kota}. IG: ${instagram || '-'} | WA: ${whatsapp}. Alasan saya tertarik join: ${motivasi}`;
-    const linkWA = `https://wa.me/${whatsapp.replace(/^0/, '62')}?text=${encodeURIComponent(pesanWA)}`;
+    const linkWA = `https://wa.me/${myWa.replace(/^0/, '62')}?text=${encodeURIComponent(pesanWA)}`;
     setTimeout(() => {
         window.location.href = linkWA;
     }, 300);
