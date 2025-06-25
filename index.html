@@ -9,31 +9,31 @@
 <body>
     <div class="container">
         <h1>Join Tim Gua 💼</h1>
-        <p class="description">Buat kalian yang ambis, suka dunia finansial dan mau berkembang bareng tim keren </p>
+        <p class="description">Buat kalian yang ambis, suka dunia finansial dan mau berkembang bareng tim keren</p>
         <div id="notif" class="notif" style="display:none;">Harap mengisi semua data pada form</div>
         <form id="rekrutForm">
             <label>Nama Lengkap
-                <input type="text" id="nama" placeholder="Contoh: Dimas Pratama">
+                <input type="text" id="nama" placeholder="Contoh: Dimas Pratama" pattern="[A-Za-z\s]+" title="Hanya huruf dan spasi" required>
                 <span class="error" id="error-nama"></span>
             </label>
             <label>Usia
-                <input type="number" id="usia" placeholder="Contoh: 17">
+                <input type="number" id="usia" placeholder="Contoh: 17" required>
                 <span class="error" id="error-usia"></span>
             </label>
             <label>Asal Kota
-                <input type="text" id="kota" placeholder="Contoh: Jakarta">
+                <input type="text" id="kota" placeholder="Contoh: Jakarta" pattern="[A-Za-z\s]+" title="Hanya huruf dan spasi" required>
                 <span class="error" id="error-kota"></span>
             </label>
             <label>Instagram 
-                <input type="text" id="instagram" placeholder="Contoh: @dimasambis">
+                <input type="text" id="instagram" placeholder="Contoh: @dimasambis" required>
                 <span class="error" id="error-instagram"></span>
             </label>
             <label>Nomor WhatsApp
-                <input type="text" id="whatsapp" placeholder="Contoh: 08xxxxxxxxxx">
+                <input type="tel" id="whatsapp" placeholder="Contoh: 08xxxxxxxxxx" pattern="[0-9]+" title="Hanya angka tanpa spasi atau simbol" required>
                 <span class="error" id="error-whatsapp"></span>
             </label>
             <label>Alasan Tertarik Join
-                <textarea id="motivasi" placeholder="Ceritain kenapa lo tertarik join tim ini"></textarea>
+                <textarea id="motivasi" placeholder="Ceritain kenapa lo tertarik join tim ini" required></textarea>
                 <span class="error" id="error-motivasi"></span>
             </label>
             <button type="submit">Kirim & Hubungi via WhatsApp</button>
