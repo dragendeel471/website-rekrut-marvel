@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Rekrut Marvel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Join Tim Gue 💼</h1>
+        <p class="description">Buat kamu yang ambis, suka dunia finansial dan mau berkembang bareng tim keren 💚</p>
+        <div id="notif" class="notif" style="display:none;">Harap mengisi semua data pada form</div>
+        <form id="rekrutForm">
+            <label>Nama Lengkap
+                <input type="text" id="nama" placeholder="Contoh: Marvel Federick">
+                <span class="error" id="error-nama"></span>
+            </label>
+            <label>Usia
+                <input type="number" id="usia" placeholder="Contoh: 17">
+                <span class="error" id="error-usia"></span>
+            </label>
+            <label>Asal Kota
+                <input type="text" id="kota" placeholder="Contoh: Jakarta">
+                <span class="error" id="error-kota"></span>
+            </label>
+            <label>Instagram (Opsional)
+                <input type="text" id="instagram" placeholder="Contoh: @marvelfederick">
+                <span class="error" id="error-instagram"></span>
+            </label>
+            <label>Nomor WhatsApp
+                <input type="text" id="whatsapp" placeholder="Contoh: 08xxxxxxxxxx">
+                <span class="error" id="error-whatsapp"></span>
+            </label>
+            <label>Alasan Tertarik Join
+                <textarea id="motivasi" placeholder="Ceritain kenapa lo tertarik join tim ini"></textarea>
+                <span class="error" id="error-motivasi"></span>
+            </label>
+            <button type="submit">Kirim & Hubungi via WhatsApp</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
