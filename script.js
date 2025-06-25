@@ -82,7 +82,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }).then(() => {
             const waMessage = `Halo! Saya ${nama.value}, usia ${usia.value}, dari ${kota.value}. Instagram saya ${instagram.value}. Saya tertarik join karena: ${motivasi.value}`;
             const encoded = encodeURIComponent(waMessage);
-            window.location.href = `https://wa.me/${whatsapp.value}?text=${encoded}`;
+            let waFormatted = whatsapp.value.trim();
+            
+if (waFormatted.startsWith("0")) {
+    waFormatted = "62" + waFormatted.substring(1);
+}
+
+window.location.href = `https://wa.me/${waFormatted}?text=${encoded}`;
         }).catch(() => {
             alert("Gagal kirim data ke Google Form. Coba ulangi.");
         });
