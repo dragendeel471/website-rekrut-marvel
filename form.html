@@ -1,45 +1,126 @@
-<!-- form.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Form Rekrut Marvel</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Form Gabung Tim 🚀</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #10141a;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    form {
+      background: linear-gradient(to right, #00c896, #007965);
+      padding: 2rem;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.4rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .error {
+      font-size: 0.85rem;
+      color: #ffcccb;
+      margin-top: 0.2rem;
+      display: block;
+    }
+
+    button {
+      background-color: #10141a;
+      color: #00ffc8;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 100%;
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #0d2d28;
+    }
+
+    .notif {
+      background: #ffcc00;
+      color: #10141a;
+      padding: 0.8rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    @media (max-width: 500px) {
+      form {
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Join Tim Gua 💼</h1>
-        <p class="description">Buat kalian yang ambis, suka dunia finansial dan mau berkembang bareng tim keren</p>
-        <div id="notif" class="notif" style="display:none;">Harap mengisi semua data pada form</div>
-        <form id="rekrutForm">
-            <label>Nama Lengkap
-                <input type="text" id="nama" placeholder="Contoh: Dimas Pratama" required />
-                <span class="error" id="error-nama"></span>
-            </label>
-            <label>Usia
-                <input type="number" id="usia" placeholder="Contoh: 17" required />
-                <span class="error" id="error-usia"></span>
-            </label>
-            <label>Asal Kota
-                <input type="text" id="kota" placeholder="Contoh: Jakarta" required />
-                <span class="error" id="error-kota"></span>
-            </label>
-            <label>Instagram
-                <input type="text" id="instagram" placeholder="Contoh: @dimasambis" required />
-                <span class="error" id="error-instagram"></span>
-            </label>
-            <label>Nomor WhatsApp
-                <input type="tel" id="whatsapp" placeholder="Contoh: 08xxxxxxxxxx" required />
-                <span class="error" id="error-whatsapp"></span>
-            </label>
-            <label>Alasan Tertarik Join
-                <textarea id="motivasi" placeholder="Ceritain kenapa lo tertarik join tim ini" required></textarea>
-                <span class="error" id="error-motivasi"></span>
-            </label>
-            <button type="submit">Kirim & Hubungi via WhatsApp</button>
-        </form>
-    </div>
-    <script src="script.js"></script>
+
+  <form id="rekrutForm">
+    <div id="notif" class="notif" style="display:none;">Harap isi semua data dengan benar.</div>
+
+    <label for="nama">Nama Lengkap</label>
+    <input type="text" id="nama" required />
+    <span class="error" id="error-nama"></span>
+
+    <label for="usia">Usia</label>
+    <input type="number" id="usia" required />
+    <span class="error" id="error-usia"></span>
+
+    <label for="kota">Asal Kota</label>
+    <input type="text" id="kota" required />
+    <span class="error" id="error-kota"></span>
+
+    <label for="instagram">Instagram</label>
+    <input type="text" id="instagram" required />
+    <span class="error" id="error-instagram"></span>
+
+    <label for="whatsapp">Nomor WhatsApp</label>
+    <input type="text" id="whatsapp" required />
+    <span class="error" id="error-whatsapp"></span>
+
+    <label for="motivasi">Alasan Tertarik Join</label>
+    <textarea id="motivasi" rows="3" required></textarea>
+    <span class="error" id="error-motivasi"></span>
+
+    <button type="submit">Kirim & Hubungi via WhatsApp</button>
+  </form>
+
+  <script src="script.js"></script>
 </body>
 </html>
