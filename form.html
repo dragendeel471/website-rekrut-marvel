@@ -15,15 +15,29 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      flex-direction: column;
     }
 
-    form {
+    .form-container {
       background: linear-gradient(to right, #00c896, #007965);
       padding: 2rem;
       border-radius: 16px;
       width: 90%;
       max-width: 500px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .form-container h1 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+      color: #ffffff;
+    }
+
+    .form-container p {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      color: #eafff9;
     }
 
     label {
@@ -83,7 +97,7 @@
     }
 
     @media (max-width: 500px) {
-      form {
+      .form-container {
         padding: 1.5rem;
       }
     }
@@ -91,35 +105,40 @@
 </head>
 <body>
 
-  <form id="rekrutForm">
-    <div id="notif" class="notif" style="display:none;">Harap isi semua data dengan benar.</div>
+  <div class="form-container">
+    <h1>Isi Data Lo Dulu 💼</h1>
+    <p>Lengkapi form ini biar tim kita bisa langsung kontak lo buat next step. Santai aja, cuma butuh 1 menit kok 🚀</p>
 
-    <label for="nama">Nama Lengkap</label>
-    <input type="text" id="nama" required />
-    <span class="error" id="error-nama"></span>
+    <form id="rekrutForm">
+      <div id="notif" class="notif" style="display:none;">Harap isi semua data dengan benar.</div>
 
-    <label for="usia">Usia</label>
-    <input type="number" id="usia" required />
-    <span class="error" id="error-usia"></span>
+      <label for="nama">Nama Lengkap</label>
+      <input type="text" id="nama" required />
+      <span class="error" id="error-nama"></span>
 
-    <label for="kota">Asal Kota</label>
-    <input type="text" id="kota" required />
-    <span class="error" id="error-kota"></span>
+      <label for="usia">Usia</label>
+      <input type="number" id="usia" required />
+      <span class="error" id="error-usia"></span>
 
-    <label for="instagram">Instagram</label>
-    <input type="text" id="instagram" required />
-    <span class="error" id="error-instagram"></span>
+      <label for="kota">Asal Kota</label>
+      <input type="text" id="kota" required />
+      <span class="error" id="error-kota"></span>
 
-    <label for="whatsapp">Nomor WhatsApp</label>
-    <input type="text" id="whatsapp" required />
-    <span class="error" id="error-whatsapp"></span>
+      <label for="instagram">Instagram</label>
+      <input type="text" id="instagram" required />
+      <span class="error" id="error-instagram"></span>
 
-    <label for="motivasi">Alasan Tertarik Join</label>
-    <textarea id="motivasi" rows="3" required></textarea>
-    <span class="error" id="error-motivasi"></span>
+      <label for="whatsapp">Nomor WhatsApp</label>
+      <input type="text" id="whatsapp" required />
+      <span class="error" id="error-whatsapp"></span>
 
-    <button type="submit">Kirim & Hubungi via WhatsApp</button>
-  </form>
+      <label for="motivasi">Alasan Tertarik Join</label>
+      <textarea id="motivasi" rows="3" required></textarea>
+      <span class="error" id="error-motivasi"></span>
+
+      <button type="submit">Kirim & Hubungi via WhatsApp</button>
+    </form>
+  </div>
 
   <script src="script.js"></script>
 </body>
