@@ -88,7 +88,7 @@ if (waFormatted.startsWith("0")) {
     waFormatted = "62" + waFormatted.substring(1);
 }
 
-window.location.href = `https://wa.me/${waFormatted}?text=${encoded}`;
+window.location.href = `https://wa.me/6287769211228?text=${encoded}`;
         }).catch(() => {
             alert("Gagal kirim data ke Google Form. Coba ulangi.");
         });
