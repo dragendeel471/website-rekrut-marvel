@@ -79,6 +79,26 @@
       background-color: #009e76;
     }
 
+    .team-photo {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .team-photo img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .team-photo p {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: #f0f0f0;
+      max-width: 700px;
+      margin-inline: auto;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -90,7 +110,7 @@
       .hero h1 {
         font-size: 2rem;
       }
-      .hero p, .section p {
+      .hero p, .section p, .team-photo p {
         font-size: 1rem;
       }
       .section h2 {
@@ -102,8 +122,7 @@
 <body>
 
   <section class="hero" data-aos="fade-up" data-aos-delay="0">
-    <h1>🚀 Lo Punya Mimpi Gede?
-      Bangun Karier Lo Bareng Kita</h1>
+    <h1>🚀 Lo Punya Mimpi Gede? Bangun Karier Lo Bareng Kita</h1>
     <p>Kita bukan tim biasa. Kita tempatnya lo tumbuh — bareng orang-orang ambis yang cinta <span class="highlight">investasi, bisnis, dan perkembangan diri</span>.</p>
   </section>
 
@@ -120,7 +139,12 @@
     <p>Kita bangun ekosistem: tim yang sehat, sistem yang jelas, dan peluang yang terus berkembang bareng lo.</p>
   </section>
 
-  <section class="section" data-aos="fade-up" data-aos-delay="600">
+  <section class="team-photo" data-aos="fade-up" data-aos-delay="600">
+    <img src="foto-tim.jpg" alt="Foto Komunitas Tim" />
+    <p>Kami bukan cuma komunitas biasa — ini adalah tim yang serius berkembang bareng, saling support, dan punya track record nyata. Kalau lo pengen tumbuh bareng orang-orang ambisius, lo udah di tempat yang tepat. 💼🔥</p>
+  </section>
+
+  <section class="section" data-aos="fade-up" data-aos-delay="800">
     <h2>💡 Apa yang Akan Lo Dapat?</h2>
     <ul style="color: #ccc; font-size: 1.05rem;">
       <li>✅ Akses ke pelatihan & mentoring langsung dari praktisi</li>
@@ -131,7 +155,7 @@
     </ul>
   </section>
 
-  <section class="section cta" data-aos="zoom-in" data-aos-delay="800">
+  <section class="section cta" data-aos="zoom-in" data-aos-delay="1000">
     <h2>⚡ Siap Take Action?</h2>
     <p>Kalo lo udah baca sampai sini, berarti lo serius. Klik tombol di bawah buat isi data singkat & kita akan kontak lo langsung lewat WhatsApp.</p>
     <a href="form.html" class="btn">Gua Mau Join 🔥</a>
@@ -145,8 +169,8 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
-      duration: 1600, // Lebih lambat
-      easing: 'ease-out-back', // Smooth easing
+      duration: 1600,
+      easing: 'ease-out-back',
       once: true,
       offset: 100
     });
