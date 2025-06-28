@@ -127,7 +127,7 @@
       const whatsapp = document.getElementById("whatsapp").value;
       const motivasi = document.getElementById("motivasi").value;
 
-      const pesan = `🚀 *Pendaftar Baru Masuk!*\n\n*🧑 Nama:* ${nama}\n*🎂 Usia:* ${usia}\n*🏙️ Kota:* ${kota}\n*📸 Instagram:* @${instagram}\n*💬 Alasan Join:*\n${motivasi}`;
+      const pesan = `Halo, saya ${nama} (Usia: ${usia}) dari ${kota}. IG saya: @${instagram}. Alasan gabung: ${motivasi}`;
       const encoded = encodeURIComponent(pesan);
       const linkWA = `https://wa.me/6287769211228?text=${encoded}`;
 
