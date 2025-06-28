@@ -61,13 +61,6 @@
       resize: vertical;
     }
 
-    .error {
-      font-size: 0.85rem;
-      color: #ffcccb;
-      margin-top: 0.2rem;
-      display: block;
-    }
-
     button {
       background-color: #10141a;
       color: #00ffc8;
@@ -86,16 +79,6 @@
       background-color: #0d2d28;
     }
 
-    .notif {
-      background: #ffcc00;
-      color: #10141a;
-      padding: 0.8rem;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      font-weight: bold;
-      text-align: center;
-    }
-
     @media (max-width: 500px) {
       .form-container {
         padding: 1.5rem;
@@ -107,42 +90,53 @@
 
   <div class="form-container">
     <h1>Siap Naik Level Bareng Tim Gokil? 🚀</h1>
-<p>
-Lo suka dunia finansial, ambis, dan pengen punya circle yang saling support buat berkembang bareng?
-Yuk isi form ini, biar kita bisa ngobrol lebih lanjut dan bareng-bareng ke puncak! 💸🔥
-</p>
+    <p>Lo suka dunia finansial, ambis, dan pengen punya circle yang saling support buat berkembang bareng?
+      Yuk isi form ini, biar kita bisa ngobrol lebih lanjut dan bareng-bareng ke puncak! 💸🔥</p>
 
-    <form id="rekrutForm">
-      <div id="notif" class="notif" style="display:none;">Harap isi semua data dengan benar.</div>
-
+    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd7BnccJxOuFhss3Uc87ZT8-bXpFQ-1gE3JPK4vB9eCvo7UbA/formResponse" method="POST" target="hidden_iframe" onsubmit="return kirimWA();">
       <label for="nama">Nama Lengkap</label>
-      <input type="text" id="nama" required />
-      <span class="error" id="error-nama"></span>
+      <input type="text" name="entry.2089161601" id="nama" required />
 
       <label for="usia">Usia</label>
-      <input type="number" id="usia" required />
-      <span class="error" id="error-usia"></span>
+      <input type="number" name="entry.996133752" id="usia" required />
 
       <label for="kota">Asal Kota</label>
-      <input type="text" id="kota" required />
-      <span class="error" id="error-kota"></span>
+      <input type="text" name="entry.1317904197" id="kota" required />
 
       <label for="instagram">Instagram</label>
-      <input type="text" id="instagram" required />
-      <span class="error" id="error-instagram"></span>
+      <input type="text" name="entry.723704522" id="instagram" required />
 
       <label for="whatsapp">Nomor WhatsApp</label>
-      <input type="number" id="whatsapp" required />
-      <span class="error" id="error-whatsapp"></span>
+      <input type="number" name="entry.1167887959" id="whatsapp" required />
 
       <label for="motivasi">Alasan Tertarik Join</label>
-      <textarea id="motivasi" rows="3" required></textarea>
-      <span class="error" id="error-motivasi"></span>
+      <textarea name="entry.567287603" id="motivasi" rows="3" required></textarea>
 
       <button type="submit">Kirim & Hubungi via WhatsApp</button>
     </form>
+
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    function kirimWA() {
+      const nama = document.getElementById("nama").value;
+      const usia = document.getElementById("usia").value;
+      const kota = document.getElementById("kota").value;
+      const instagram = document.getElementById("instagram").value;
+      const whatsapp = document.getElementById("whatsapp").value;
+      const motivasi = document.getElementById("motivasi").value;
+
+      const pesan = `🚀 *Pendaftar Baru Masuk!*\n\n*🧑 Nama:* ${nama}\n*🎂 Usia:* ${usia}\n*🏙️ Kota:* ${kota}\n*📸 Instagram:* @${instagram}\n*💬 Alasan Join:*\n${motivasi}`;
+      const encoded = encodeURIComponent(pesan);
+      const linkWA = `https://wa.me/6287769211228?text=${encoded}`;
+
+      setTimeout(() => {
+        window.location.href = linkWA;
+      }, 800); // kasih waktu biar submit ke Google Form dulu
+
+      return true;
+    }
+  </script>
 </body>
 </html>
