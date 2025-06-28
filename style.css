@@ -1,18 +1,23 @@
-
 body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom right, #d4fcdc, #ffffff);
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #00c896, #007965);
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-.container {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 25px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.form-container {
+  background-color: #10141a;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 h1 {
